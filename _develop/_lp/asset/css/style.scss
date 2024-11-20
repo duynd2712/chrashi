@@ -1,0 +1,19 @@
+@charset "utf-8";
+// ===================================================================
+//  use toppage
+// ===================================================================
+
+@import "_mixin/mixin";
+
+//---------------------------------------------------------------------------
+@include min-screen() {
+  @import "./_style_pc.scss";
+  @import "./_kodomo_template_pc.scss";
+  @import "./_contact_pc.scss";
+}
+
+@include max-screen() {
+  @import "./_style_sp.scss";
+  @import "./_kodomo_template_sp.scss";
+  @import "./_contact_sp.scss";
+}

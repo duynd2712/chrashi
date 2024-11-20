@@ -1,0 +1,139 @@
+@charset "utf-8";
+// ===================================================================
+//  common.css
+// ===================================================================
+
+@import "_mixin/mixin";
+
+//----------------------------------------------------
+//  共通
+//----------------------------------------------------
+html {
+  font-size: 10px;
+}
+
+body,
+td,
+th,
+input,
+textarea {
+  color: #000000;
+  font-family: 'Noto Sans JP', "ヒラギノ角ゴ W6", "Hiragino Kaku Gothic W6", "ヒラギノ角ゴ W3", "Hiragino Kaku Gothic W3", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+body {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+/*
+  filter: alpha(opacity=80);
+  -ms-filter: "alpha(opacity=80)";
+  opacity: .80;
+*/
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+.img_ck {
+  font-size: rem(1);
+  line-height: 0;
+}
+
+/* clearfix (micro) */
+.clearfix:before,
+.clearfix:after {
+  content: ' ';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/* For IE 6/7 only */
+.clearfix {
+  *zoom: 1;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  word-break: break-word;
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+iframe {
+  border: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+input,
+select,
+textarea,
+button {
+  outline: none;
+}
+
+picture {
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+figure,
+img,
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+//---------------------------------------------------------------------------
+@include min-screen() {
+  @import "_common_pc.scss";
+  @import "_header_pc.scss";
+  @import "_footer_pc.scss";
+}
+
+@include max-screen() {
+  @import "_common_sp.scss";
+  @import "_header_sp.scss";
+  @import "_footer_sp.scss";
+}
